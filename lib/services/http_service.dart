@@ -5,6 +5,7 @@ import 'package:task_pardemo/model/emp_model.dart';
 import 'package:task_pardemo/model/empdelete_model.dart';
 import 'package:task_pardemo/model/emplist_model.dart';
 import 'package:task_pardemo/model/empone_model.dart';
+import 'package:task_pardemo/model/empupdate_model.dart';
 import 'package:task_pardemo/model/user_model.dart';
 
 class Network {
@@ -107,6 +108,12 @@ class Network {
   static EmpDelete parseEmpDelete(String body) {
     dynamic json = jsonDecode(body);
     var data = EmpDelete.fromJson(json);
+    return data;
+  }
+
+  static EmpUpdate parseEmpUpdate(String body) {
+    dynamic json = jsonDecode(body);
+    var data = EmpUpdate.fromJson(json);
     return data;
   }
 }
